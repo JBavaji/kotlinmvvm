@@ -45,7 +45,6 @@ class ListViewModel : ViewModel() {
                     }
 
                     override fun onError(e: Throwable?) {
-                        Log.d("onError ", e.toString())
                         countryLoadError.value = true
                         loading.value = false
                     }
