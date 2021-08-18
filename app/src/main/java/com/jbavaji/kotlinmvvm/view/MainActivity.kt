@@ -34,6 +34,7 @@ class MainActivity : AppCompatActivity() {
         viewModel.countries.observe(this,
             Observer { countries ->
                 countries?.let {
+                    countriesList.visibility = View.VISIBLE
                     countryListAdapter.updateCountries(it)
                 }
             })
@@ -60,6 +61,7 @@ class MainActivity : AppCompatActivity() {
 
         swipeToRefreshLayout.setOnRefreshListener{
             swipeToRefreshLayout.isRefreshing = false
+            viewModel.refresh()
         }
 
     }
